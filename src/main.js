@@ -1,5 +1,5 @@
 import Vue from 'vue'
-
+import 'babel-polyfill'
 import 'normalize.css/normalize.css'
 
 import ElementUI from 'element-ui'
@@ -12,11 +12,7 @@ import router from './router'
 
 import '@/icons'
 import '@/permission'
-
-if (process.env.NODE_ENV === 'production') {
-    const { mockXHR } = require('../mock')
-    mockXHR()
-}
+import '@/utils/components'
 
 Vue.use(ElementUI)
 
