@@ -37,7 +37,7 @@
       </template>
 
       <!-- 按钮项 -->
-      <el-table-column v-if="btns" fixed="right" :label="btns.title" :width="btns.width" :align="align">
+      <el-table-column v-if="btns" fixed="right" :label="btns.title" :min-width="btns.width" :align="align">
         <template slot-scope="{row}">
           <div class="btnCzBox">
             <template v-for="(ele,y) in btns.btnlist">
@@ -260,7 +260,7 @@ export default {
     }
     .btnCzBox {
       display: flex;
-      justify-content: space-around;
+      justify-content: center;
       align-items: center;
     }
   }

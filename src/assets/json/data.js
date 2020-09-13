@@ -43,7 +43,8 @@ export default [
         payOrderNo: null,
         organizationId: 535,
         organizationName: '海南省临高县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 395,
@@ -89,7 +90,8 @@ export default [
         payOrderNo: null,
         organizationId: 687,
         organizationName: '海南省陵水黎族自治县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 394,
@@ -135,7 +137,8 @@ export default [
         payOrderNo: null,
         organizationId: 687,
         organizationName: '海南省陵水黎族自治县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 393,
@@ -181,7 +184,8 @@ export default [
         payOrderNo: null,
         organizationId: 687,
         organizationName: '海南省陵水黎族自治县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 392,
@@ -227,7 +231,8 @@ export default [
         payOrderNo: null,
         organizationId: 459,
         organizationName: '海南省定安县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 391,
@@ -273,7 +278,8 @@ export default [
         payOrderNo: null,
         organizationId: 459,
         organizationName: '海南省定安县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 390,
@@ -319,7 +325,8 @@ export default [
         payOrderNo: null,
         organizationId: 459,
         organizationName: '海南省定安县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 389,
@@ -365,7 +372,8 @@ export default [
         payOrderNo: null,
         organizationId: 535,
         organizationName: '海南省临高县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 400,
@@ -411,7 +419,8 @@ export default [
         payOrderNo: null,
         organizationId: 260,
         organizationName: '海南省五指山市公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 399,
@@ -457,7 +466,8 @@ export default [
         payOrderNo: null,
         organizationId: 260,
         organizationName: '海南省五指山市公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 398,
@@ -503,7 +513,8 @@ export default [
         payOrderNo: null,
         organizationId: 687,
         organizationName: '海南省陵水黎族自治县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 397,
@@ -549,7 +560,8 @@ export default [
         payOrderNo: null,
         organizationId: 260,
         organizationName: '海南省五指山市公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 396,
@@ -595,7 +607,8 @@ export default [
         payOrderNo: null,
         organizationId: 535,
         organizationName: '海南省临高县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 395,
@@ -641,7 +654,8 @@ export default [
         payOrderNo: null,
         organizationId: 687,
         organizationName: '海南省陵水黎族自治县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 394,
@@ -687,7 +701,8 @@ export default [
         payOrderNo: null,
         organizationId: 687,
         organizationName: '海南省陵水黎族自治县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     },
     {
         id: 393,
@@ -733,6 +748,7 @@ export default [
         payOrderNo: null,
         organizationId: 687,
         organizationName: '海南省陵水黎族自治县公安局',
-        isUrgent: 0
+        isUrgent: 0,
+        role:'超级管理员'
     }
 ]
