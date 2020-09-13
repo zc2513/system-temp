@@ -10,9 +10,7 @@ import App from './App'
 import store from './store'
 import router from './router'
 
-import '@/icons'
-import '@/permission'
-import '@/utils/components'
+import '@/utils'
 
 Vue.use(ElementUI)
 

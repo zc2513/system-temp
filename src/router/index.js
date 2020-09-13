@@ -47,7 +47,7 @@ export const constantRoutes = [
     {
         path: '/Monitoring',
         name: 'Monitoring',
-        component: () => import('@/views/Monitoring/index'),
+        component: () => import('@/views/Monitoring/b'),
         meta: { title: '首页', icon: 'dashboard' }
     },
     system,
