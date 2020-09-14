@@ -1,5 +1,6 @@
 // 权限控制
 import { constantRoutes } from '@/router'
+import menuUtils from '@/utils/menuUtils'
 
 /**
  * 使用meta.role确定当前用户是否具有权限
@@ -56,6 +57,7 @@ const actions = {
             } else {
                 accessedRoutes = filterAsyncRoutes(asyncRoutes, roles)
             }
+            menuUtils([])
             commit('SET_ROUTES', accessedRoutes)
             resolve(accessedRoutes)
         })
