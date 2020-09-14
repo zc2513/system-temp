@@ -8,25 +8,25 @@ const system = {
     path: '/system',
     component: Layout,
     redirect: '/system/account',
-    meta: { title: '系统管理', icon: 'dashboard' },
+    meta: { title: '系统管理', icon: 'system' },
     children: [
         {
             path: 'company',
             name: 'Company',
             component: () => import('@/views/system/company/index'),
-            meta: { title: '机构管理', icon: 'dashboard' }
+            meta: { title: '机构管理', icon: 'company' }
         },
         {
             path: 'role',
             name: 'Role',
             component: () => import('@/views/system/role/index'),
-            meta: { title: '角色管理', icon: 'dashboard' }
+            meta: { title: '角色管理', icon: 'role' }
         },
         {
             path: 'pageRoute',
             name: 'PageRoute',
             component: () => import('@/views/system/pageRoute/index'),
-            meta: { title: '路由管理', icon: 'dashboard' }
+            meta: { title: '路由管理', icon: 'pageRoute' }
         }
     ]
 }

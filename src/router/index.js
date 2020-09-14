@@ -42,13 +42,13 @@ export const constantRoutes = [
     },
     {
         path: '/',
-        redirect: '/Monitoring'
+        redirect: '/monitoring'
     },
     {
-        path: '/Monitoring',
+        path: '/monitoring',
         name: 'Monitoring',
-        component: () => import('@/views/Monitoring/b'),
-        meta: { title: '首页', icon: 'dashboard' }
+        component: () => import('@/views/monitoring/b'),
+        meta: { title: '首页', icon: 'monitoring' }
     },
     system,
     demo,
