@@ -1,3 +1,5 @@
+import * as settings from '@/settings'
+
 const state = {
     visitedViews: [],
     cachedViews: []
@@ -75,6 +77,7 @@ const actions = {
         commit('ADD_VISITED_VIEW', view)
     },
     addCachedView({ commit }, view) {
+        if (!settings.isCache) return
         commit('ADD_CACHED_VIEW', view)
     },
 

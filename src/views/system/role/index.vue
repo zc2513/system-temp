@@ -1,6 +1,6 @@
 <template>
   <div class="list-box">
-    角色管理
+    角色管理666
     <div class="fle mb10">
       <el-button size="mini" type="primary" class="mr20" @click="addRole">新增</el-button>
     </div>
@@ -25,6 +25,7 @@
         <el-table-column label="操作" align="center">
           <template slot-scope="scope">
             <el-button size="mini" @click="handleEdit(scope.$index, scope.row)">修改</el-button>
+            <el-button size="mini" type="primary" @click="setRoles(scope.$index, scope.row)">权限设置</el-button>
             <el-button size="mini" type="danger" @click="handleDelete(scope.$index, scope.row)">删除</el-button>
           </template>
         </el-table-column>
@@ -81,6 +82,9 @@ export default {
         pagesizes(size) {
             this.baseParams.page = 1
             this.baseParams.size = size
+        },
+        setRoles(index, row) {
+            console.log('设置权限')
         }
     }
 }

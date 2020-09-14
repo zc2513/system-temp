@@ -4,6 +4,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 /* Layout */
+import Layout from '@/layout'
 import { system, demo } from './module/index'
 
 /**
@@ -30,6 +31,17 @@ import { system, demo } from './module/index'
  */
 export const constantRoutes = [
     {
+        path: '/redirect',
+        component: Layout,
+        hidden: true,
+        children: [
+            {
+                path: '/redirect/:path*',
+                component: () => import('@/views/redirect/index')
+            }
+        ]
+    },
+    {
         path: '/login',
         component: () => import('@/views/login/index'),
         hidden: true
@@ -51,8 +63,8 @@ export const constantRoutes = [
         meta: { title: '首页', icon: 'monitoring' }
     },
     system,
-    demo,
-    { path: '*', redirect: '/404', hidden: true }
+    demo
+    // { path: '*', redirect: '/404', hidden: true }
 ]
 
 const createRouter = () => new Router({
