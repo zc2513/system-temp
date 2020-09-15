@@ -120,13 +120,5 @@ module.exports = {
                     config.optimization.runtimeChunk('single')
                 }
             )
-    },
-    pluginOptions: {
-        'style-resources-loader': {
-            preProcessor: 'scss',
-            patterns: [
-                resolve('./src/styles/variables.scss')
-            ]
-        }
     }
 }
