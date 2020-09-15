@@ -1,14 +1,15 @@
 module.exports = {
-    presets: [
-        '@vue/cli-plugin-babel/preset',
-        '@vue/app',
-        [
-            '@babel/preset-env', {
-                modules: false
-            }
-        ]
+    'presets': [
+        '@vue/cli-plugin-babel/preset'
     ],
-    plugins: [
+    'env': {
+        'development': {
+            'plugins': [
+                'dynamic-import-node'
+            ]
+        }
+    },
+    'plugins': [
         [
             'component',
             {
@@ -16,10 +17,5 @@ module.exports = {
                 'styleLibraryName': 'theme-chalk'
             }
         ]
-    ],
-    'env': {
-        'development': { // 提高热更新的速度
-            'plugins': ['dynamic-import-node']
-        }
-    }
+    ]
 }

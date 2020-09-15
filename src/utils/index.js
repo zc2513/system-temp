@@ -1,6 +1,6 @@
 import Vue from 'vue'
 
-import '@/utils/element-ui'
+import '@/plugins/element'
 import '@/icons' // 字体图标
 import '@/permission' // 权限
 import './component-register' // 全局组件注册
