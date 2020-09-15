@@ -7,7 +7,8 @@ const getDefaultState = () => {
     return {
         token: getToken(),
         name: '',
-        avatar: ''
+        avatar: '',
+        roles: []
     }
 }
 
@@ -25,6 +26,9 @@ const mutations = {
     },
     SET_AVATAR: (state, avatar) => {
         state.avatar = avatar
+    },
+    SET_ROLES: (state, roles) => {
+        state.roles = roles
     }
 }
 
@@ -58,10 +62,11 @@ const actions = {
             })
             setTimeout(() => {
                 loadingInstance.close()
-                dispatch('permission/generateRoutes', { roles: ['admin'], asyncRoutes: [] }, { root: true })
+                // dispatch('permission/generateRoutes', { roles: ['admin'], asyncRoutes: [] }, { root: true })
                 commit('SET_NAME', '张三')
                 commit('SET_AVATAR', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1599893218258&di=187230fa002576b65eab9a611120b0a3&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201702%2F18%2F20170218161710_wiVcE.gif')
-                resolve()
+                commit('SET_ROLES', ['admin'])
+                resolve({ asyncRoutes: [], roles: ['admin'] })
             }, 1000)
             // getInfo(state.token).then(response => {
             //     const { data } = response

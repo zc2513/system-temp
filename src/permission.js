@@ -22,19 +22,23 @@ router.beforeEach(async(to, from, next) => {
             next({ path: '/' })
             NProgress.done()
         } else {
-            const hasGetUserInfo = store.getters.name
-            if (hasGetUserInfo) {
+            if (store.getters.roles.length) { // 判断当前用户是否已拉取完user_info信息
                 next()
             } else {
-                try {
-                    await store.dispatch('user/getInfo')
-                    next()
-                } catch (error) {
-                    await store.dispatch('user/resetToken')
-                    Message.error(error || 'removeToken')
-                    next(`/login?redirect=${to.path}`)
-                    NProgress.done()
-                }
+                store.dispatch('user/getInfo').then(res => { // 拉取user_info
+                    store.dispatch('permission/generateRoutes', res).then(() => { // 根据roles权限生成可访问的路由表
+                        router.addRoutes(store.getters.addRouters) // 动态添加可访问路由表
+                        next({ ...to, replace: true }) // hack方法 确保addRoutes已完成 ,设置replace: true，这样导航就不会留下历史记录
+                    })
+                }).catch((err) => {
+                    console.log('出现异常', err)
+                    store.dispatch('logout').then(async() => {
+                        await store.dispatch('user/resetToken')
+                        Message.error(err)
+                        next(`/login?redirect=${to.path}`)
+                        NProgress.done()
+                    })
+                })
             }
         }
     } else {
