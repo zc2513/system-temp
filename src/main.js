@@ -12,7 +12,7 @@ import router from './router'
 
 import '@/utils'
 
-Vue.use(ElementUI)
+Vue.use(ElementUI, { size: 'small', zIndex: 3000 })
 
 Vue.config.productionTip = false
 
