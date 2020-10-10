@@ -93,7 +93,7 @@
  *  @align {left/center/right} 对齐方式
  */
 import datas from '@/assets/json/data'
-// import Sortable from 'sortablejs'
+import Sortable from 'sortablejs'
 export default {
     props: {
         stripe: {
@@ -123,6 +123,10 @@ export default {
         lists: {
             type: Array,
             default: () => datas.slice(0, 8)
+        },
+        isSort: {
+            type: Boolean,
+            default: false
         },
         titles: {
             type: Array,
@@ -197,8 +201,23 @@ export default {
     mounted() {
         this.resizeHeight()
         window.onresize = () => this.resizeHeight()
+        if (this.isSort) this.setSort()
     },
     methods: {
+        setSort() {
+            const el = document.querySelector('.el-table__body-wrapper tbody')
+            this.sortable = Sortable.create(el, {
+                ghostClass: 'sortable-ghost', // drop占位符的类名
+                setData: function(dataTransfer) {
+                    dataTransfer.setData('Text', '')
+                    // 避免Firefox bug https://github.com/RubaXa/Sortable/issues/1012
+                },
+                onEnd: evt => {
+                    const targetRow = this.lists.splice(evt.oldIndex, 1)[0]
+                    this.lists.splice(evt.newIndex, 0, targetRow)
+                }
+            })
+        },
         handleSelect(selection, row) { // 表单行数据获取
             this.radio(row, 'select框')
         },
